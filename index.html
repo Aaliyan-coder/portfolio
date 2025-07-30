@@ -9,32 +9,37 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #e3f2fd;
       color: #333;
+      transition: background 0.5s ease;
     }
     header {
-      background: #222;
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      animation: fadeIn 1s ease-in-out;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     main {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
+      animation: slideIn 1s ease-in-out;
     }
     section {
       margin-bottom: 2rem;
     }
     h2 {
-      color: #0066cc;
+      color: #0d47a1;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 0.3rem;
     }
     ul {
       list-style: none;
@@ -44,7 +49,20 @@
       background: white;
       margin: 0.5rem 0;
       padding: 1rem;
-      border-left: 4px solid #0066cc;
+      border-left: 4px solid #1976d2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+    li:hover {
+      transform: scale(1.02);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
@@ -56,7 +74,7 @@
   <main>
     <section>
       <h2>About Me</h2>
-      <p>I'm an AI student passionate about building intelligent systems that blend rule-based reasoning, logic programming, and NLP. I'm currently developing hybrid AI applications using Python, Prolog, AIML, and web technologies.</p>
+      <p>I'm an AI student passionate about building intelligent systems that blend rule-based reasoning, logic programming, and NLP. I'm currently developing hybrid AI applications using Python, Prolog, AIML, Neo4j, and web technologies like Flask and Node.js.</p>
     </section>
 
     <section>
@@ -68,6 +86,7 @@
         <li>Natural Language Processing (NLP), NLTK</li>
         <li>Logic Programming, Rule-Based Systems</li>
         <li>Knowledge Representation, RESTful APIs, Git</li>
+        <li>AI System Integration, Symbolic Reasoning</li>
       </ul>
     </section>
 
@@ -80,8 +99,11 @@
     </section>
 
     <section>
-      <h2>Featured Project</h2>
-      <p><strong>Hybrid AI Chatbot System</strong> – A web-based conversational AI integrating AIML for dialogue, Prolog for logic reasoning, Neo4j for graph memory, Flask for backend, and NLTK for NLP. This modular system demonstrates rule-based logic, natural language understanding, and symbolic AI techniques.</p>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Hybrid AI Chatbot System</strong> – A web-based conversational AI integrating AIML for dialogue, Prolog for logic reasoning, Neo4j for graph memory, Flask for backend, and NLTK for NLP. This modular system demonstrates rule-based logic, natural language understanding, and symbolic AI techniques.</li>
+        <li><strong>Mini Data Analysis Tools</strong> – SQL-powered data wrangling and visual inspection interfaces developed in Python for education and analytics use cases.</li>
+      </ul>
     </section>
 
     <section>
