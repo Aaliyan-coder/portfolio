@@ -9,16 +9,18 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #e3f2fd;
-      color: #333;
-      transition: background 0.5s ease;
+      background: #121212;
+      color: #e0e0e0;
+      transition: background 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(90deg, #0d47a1, #1976d2);
+      background: linear-gradient(90deg, #1e88e5, #0d47a1);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
-      animation: fadeIn 1s ease-in-out;
+      animation: slideDown 1s ease-in-out; /* NEW */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
     header h1 {
       margin: 0;
@@ -26,19 +28,47 @@
     }
     header p {
       font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1c1c1c;
+      padding: 0.8rem;
+    }
+    nav button {
+      background: #2196f3;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      margin: 0 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease; /* NEW */
+    }
+    nav button:hover {
+      background: #0d47a1;
+      transform: scale(1.05); /* NEW */
     }
     main {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
-      animation: slideIn 1s ease-in-out;
     }
     section {
-      margin-bottom: 2rem;
+      display: none;
+      opacity: 0; /* NEW */
+      transform: translateY(20px); /* NEW */
+      transition: opacity 0.6s ease, transform 0.6s ease; /* NEW */
+    }
+    section.active {
+      display: block;
+      opacity: 1; /* NEW */
+      transform: translateY(0); /* NEW */
     }
     h2 {
-      color: #0d47a1;
-      border-bottom: 2px solid #1976d2;
+      color: #64b5f6;
+      border-bottom: 2px solid #2196f3;
       padding-bottom: 0.3rem;
     }
     ul {
@@ -46,71 +76,118 @@
       padding: 0;
     }
     li {
-      background: white;
+      background: #1e1e1e;
       margin: 0.5rem 0;
       padding: 1rem;
-      border-left: 4px solid #1976d2;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
+      border-left: 4px solid #42a5f5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     li:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(66, 165, 245, 0.5); /* NEW */
     }
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes slideIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+
+    @keyframes slideDown { /* NEW */
+      from { opacity: 0; transform: translateY(-100px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Aaliyan Arif</h1>
-    <p>BS Artificial Intelligence (6th Semester) | UMT</p>
+    <p>BS Artificial Intelligence (6th Semester) | UMT Lahore</p>
   </header>
+
+  <nav>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
   <main>
-    <section>
+    <section id="about" class="active">
       <h2>About Me</h2>
-      <p>I'm an AI student passionate about building intelligent systems that blend rule-based reasoning, logic programming, and NLP. I'm currently developing hybrid AI applications using Python, Prolog, AIML, Neo4j, and web technologies like Flask and Node.js.</p>
+      <p>I'm an AI enthusiast building intelligent systems that merge symbolic AI with web technologies. I specialize in rule-based logic, NLP, knowledge graphs, and conversational agents. I aim to innovate through hybrid architectures that simulate real-world reasoning and dialogue behavior.</p>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>Python, C++, Prolog, SQL, AIML, Neo4j</li>
-        <li>OOP, DSA, Analysis and Algorithm Design</li>
-        <li>Linux, Flask, HTML, CSS, Node.js</li>
-        <li>Natural Language Processing (NLP), NLTK</li>
-        <li>Logic Programming, Rule-Based Systems</li>
-        <li>Knowledge Representation, RESTful APIs, Git</li>
-        <li>AI System Integration, Symbolic Reasoning</li>
+        <li>Languages: Python, C++, Prolog, SQL, AIML, HTML, CSS, JavaScript (Node.js)</li>
+        <li>Frameworks: Flask, Express.js</li>
+        <li>Concepts: Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), Analysis & Algorithm Design</li>
+        <li>AI & NLP: NLTK, AIML, Logic Programming, Rule-Based Systems, Symbolic AI</li>
+        <li>Databases: Neo4j (Graph DB), SQLite, MySQL</li>
+        <li>Tools: Git, Linux, RESTful APIs, Debugging & Testing</li>
+        <li>Project Integration: Multi-language AI systems, Graph reasoning, Conversational flow design</li>
       </ul>
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>BS in Artificial Intelligence</strong> – UMT Lahore (2021–Present)</li>
-        <li><strong>ICS (Computer Science with Statistics)</strong> – College Level</li>
+        <li><strong>BS in Artificial Intelligence</strong> – University of Management and Technology, Lahore (2021–Present)</li>
+        <li><strong>ICS (Computer Science with Statistics)</strong> – College Level (Pre-Engineering Stream)</li>
       </ul>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Hybrid AI Chatbot System</strong> – A web-based conversational AI integrating AIML for dialogue, Prolog for logic reasoning, Neo4j for graph memory, Flask for backend, and NLTK for NLP. This modular system demonstrates rule-based logic, natural language understanding, and symbolic AI techniques.</li>
-        <li><strong>Mini Data Analysis Tools</strong> – SQL-powered data wrangling and visual inspection interfaces developed in Python for education and analytics use cases.</li>
+        <li>
+          <strong>Hybrid AI Chatbot System</strong> – Combines AIML (dialogue), Prolog (logic), Neo4j (memory), Flask backend, and NLTK (language processing).
+          <br>
+          🔗 <a href="https://github.com/Aaliyan-coder/CHAT-BOT-WITH-NEO4J" target="_blank">CHAT-BOT-WITH-NEO4J</a>
+        </li>
+        <li>
+          <strong>Mini Data Analysis Toolkit</strong> – Python CLI for SQL, data wrangling, and simple analytics.
+          <br>
+          🔗 <a href="https://github.com/aaliyanarif/data-analysis-toolkit" target="_blank">View on GitHub</a>
+        </li>
+        <li>
+          <strong>OOP-based Bank Management System</strong> – Customer account simulation in C++ using OOP.
+          <br>
+          🔗 <a href="https://github.com/aaliyanarif/bank-management-system" target="_blank">View on GitHub</a>
+        </li>
+        <li>
+          <strong>Family Tree Logic Query System</strong> – Prolog + Python-based relationship question solver.
+          <br>
+          🔗 <a href="https://github.com/aaliyanarif/family-tree-logic-system" target="_blank">View on GitHub</a>
+        </li>
       </ul>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <em>youremail@example.com</em><br>
-      GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <p>Email: <em>aaliyanarif@example.com</em><br>
+      GitHub: <a href="https://github.com/aaliyanarif" target="_blank">github.com/aaliyanarif</a></p>
     </section>
   </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
