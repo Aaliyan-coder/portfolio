@@ -2,194 +2,407 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aaliyan Arif | AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aaliyan Arif - Profile</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #121212;
-      color: #e0e0e0;
-      transition: background 0.5s ease, color 0.5s ease;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(90deg, #1e88e5, #0d47a1);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      animation: slideDown 1s ease-in-out; /* NEW */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #1c1c1c;
-      padding: 0.8rem;
-    }
-    nav button {
-      background: #2196f3;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      margin: 0 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease; /* NEW */
-    }
-    nav button:hover {
-      background: #0d47a1;
-      transform: scale(1.05); /* NEW */
-    }
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    section {
-      display: none;
-      opacity: 0; /* NEW */
-      transform: translateY(20px); /* NEW */
-      transition: opacity 0.6s ease, transform 0.6s ease; /* NEW */
-    }
-    section.active {
-      display: block;
-      opacity: 1; /* NEW */
-      transform: translateY(0); /* NEW */
-    }
-    h2 {
-      color: #64b5f6;
-      border-bottom: 2px solid #2196f3;
-      padding-bottom: 0.3rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #1e1e1e;
-      margin: 0.5rem 0;
-      padding: 1rem;
-      border-left: 4px solid #42a5f5;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    li:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 12px rgba(66, 165, 245, 0.5); /* NEW */
-    }
-    a {
-      color: #90caf9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-    @keyframes slideDown { /* NEW */
-      from { opacity: 0; transform: translateY(-100px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.container {
+  max-width: 700px;
+  width: 100%;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-pic img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #60a5fa;
+  padding: 5px;
+  object-fit: cover;
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: 1.8rem;
+}
+
+.title {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #60a5fa;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #334155;
+}
+
+.tabs button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1rem;
+  padding: 12px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabs button:hover {
+  background-color: #1e293b;
+}
+
+.tabs .active {
+  border-bottom: 3px solid #60a5fa;
+  color: white;
+  font-weight: bold;
+}
+
+section {
+  display: none;
+  padding: 10px 0;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+}
+
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #60a5fa;
+  border-left: 5px solid #60a5fa;
+  padding-left: 10px;
+}
+
+section h3 {
+  color: #38bdf8;
+  margin-top: 15px;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+/* Special Styling for Skills Section */
+#skills {
+  border: 2px solid #334155;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.projects img {
+  
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.projects img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tabs button {
+    flex: 1 1 50%;
+  }
+}
+#mode-toggle {
+  position: fixed; /* So it stays on scroll */
+  top: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background-color: #334155;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s ease;
+  z-index: 1000;
+}
+
+#mode-toggle:hover {
+  background-color: #60a5fa;
+  transform: scale(1.1);
+}
+
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-mode .card,
+body.light-mode #skills {
+  background-color: #fff;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+body.light-mode .tabs {
+  border-bottom-color: #cbd5e1;
+}
+
+body.light-mode .tabs button {
+  color: #475569;
+}
+
+body.light-mode .tabs .active {
+  border-bottom: 3px solid #0f172a;
+  color: #0f172a;
+}
+
+body.light-mode section h2 {
+  color: #2563eb;
+  border-left-color: #2563eb;
+}
+
+body.light-mode a {
+  color: #1d4ed8;
+}
+
+body.light-mode a:hover {
+  color: #2563eb;
+}
+#typed-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #60a5fa;
+  width: fit-content;
+  margin: 15px auto 0;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+    
   </style>
 </head>
 <body>
-  <header>
-    <h1>Aaliyan Arif</h1>
-    <p>BS Artificial Intelligence (6th Semester) | UMT Lahore</p>
-  </header>
+  <div class="container">
+    <button id="mode-toggle" onclick="toggleMode()">
+  <span id="mode-icon">🌙</span>
+</button>
+    <div class="card">
 
-  <nav>
-    <button onclick="showSection('about')">About</button>
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('education')">Education</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('contact')">Contact</button>
-  </nav>
+      <div class="profile-pic">
+        <img src="https://avatars.githubusercontent.com/u/223706261?v=4" alt="Profile Picture" />
+      </div>
+      <h1 id="typed-name"></h1>
 
-  <main>
+      <p class="title">BS Artificial Intelligence | UMT Lahore</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/aaliyan-arif-b17172276/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:aaliyanrif@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Aaliyan-coder" target="_blank"><i class="fab fa-github"></i></a>
+        
+
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="active" onclick="showSection('about')">About</button>
+      <button onclick="showSection('skills')">Skills</button>
+      <button onclick="showSection('education')">Education</button>
+      <button onclick="showSection('projects')">Projects</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </div>
+
     <section id="about" class="active">
-      <h2>About Me</h2>
-      <p>I'm an AI enthusiast building intelligent systems that merge symbolic AI with web technologies. I specialize in rule-based logic, NLP, knowledge graphs, and conversational agents. I aim to innovate through hybrid architectures that simulate real-world reasoning and dialogue behavior.</p>
+      <h2>👤 Personal Profile</h2>
+      <p>
+        Aaliyan Arif is a passionate and highly motivated AI and software enthusiast from Pakistan...
+      </p>
+      <h2>💡 Academic & Technical Strengths</h2>
+      <h3>🤖 Artificial Intelligence & Machine Learning</h3>
+      <ul>
+        <li><strong>AIML</strong>: For pattern-based chatbot responses.</li>
+        <li><strong>Prolog</strong> (via <code>pyswip</code> and <code>pytholog</code>)</li>
+        <li><strong>Neo4j</strong>: Contextual memory graph DB.</li>
+        <li><strong>Flask</strong>: Python web framework for deployment.</li>
+      </ul>
+      <p>Combines Prolog + AIML + Neo4j to build hybrid AI systems.</p>
+      <h3>📊 Data Science & Machine Learning</h3>
+      <ul>
+        <li>Supervised learning (KNN, regression, gradient descent)</li>
+        <li>Evaluation metrics: accuracy, F1-score, etc.</li>
+        <li>Data cleaning, similarity, Apriori, GINI Index</li>
+      </ul>
+      <h3>🧠 Neural Networks</h3>
+      <ul>
+        <li>Input/output layers, Softmax, ReLU, loss, backpropagation</li>
+      </ul>
+      <h3>💻 Web Development</h3>
+      <ul>
+        <li>Responsive design using HTML, CSS, JS</li>
+        <li>Interactive projects & portfolio sites</li>
+      </ul>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li>Languages: Python, C++, Prolog, SQL, AIML, HTML, CSS, JavaScript (Node.js)</li>
+        <li>Languages: Python, C++, Prolog, SQL, AIML, HTML, CSS, JavaScript</li>
         <li>Frameworks: Flask, Express.js</li>
-        <li>Concepts: Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), Analysis & Algorithm Design</li>
-        <li>AI & NLP: NLTK, AIML, Logic Programming, Rule-Based Systems, Symbolic AI</li>
-        <li>Databases: Neo4j (Graph DB), SQLite, MySQL</li>
-        <li>Tools: Git, Linux, RESTful APIs, Debugging & Testing</li>
-        <li>Project Integration: Multi-language AI systems, Graph reasoning, Conversational flow design</li>
+        <li>Concepts: OOP, DSA, Algorithm Design</li>
+        <li>AI & NLP: NLTK, Symbolic AI, Rule-Based Systems</li>
+        <li>Databases: Neo4j, SQLite, MySQL</li>
+        <li>Tools: Git, REST APIs, Linux</li>
       </ul>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>BS in Artificial Intelligence</strong> – University of Management and Technology, Lahore (2021–Present)</li>
-        <li><strong>ICS (Computer Science with Statistics)</strong> – College Level (Pre-Engineering Stream)</li>
+        <li><strong>BS in Artificial Intelligence</strong> – UMT Lahore (2021–Present)</li>
+        <li><strong>ICS with Statistics</strong> – Pre-Engineering Stream</li>
       </ul>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li>
-          <strong>Hybrid AI Chatbot System</strong> – Combines AIML (dialogue), Prolog (logic), Neo4j (memory), Flask backend, and NLTK (language processing).
-          <br>
-          🔗 <a href="https://github.com/Aaliyan-coder/CHAT-BOT-WITH-NEO4J" target="_blank">CHAT-BOT-WITH-NEO4J</a>
-        </li>
-        <li>
-          <strong>Mini Data Analysis Toolkit</strong> – Python CLI for SQL, data wrangling, and simple analytics.
-          <br>
-          🔗 <a href="https://github.com/aaliyanarif/data-analysis-toolkit" target="_blank">View on GitHub</a>
-        </li>
-        <li>
-          <strong>OOP-based Bank Management System</strong> – Customer account simulation in C++ using OOP.
-          <br>
-          🔗 <a href="https://github.com/aaliyanarif/bank-management-system" target="_blank">View on GitHub</a>
-        </li>
-        <li>
-          <strong>Family Tree Logic Query System</strong> – Prolog + Python-based relationship question solver.
-          <br>
-          🔗 <a href="https://github.com/aaliyanarif/family-tree-logic-system" target="_blank">View on GitHub</a>
-        </li>
+        <li><strong>Hybrid AI Chatbot</strong> – AIML + Prolog + Neo4j + Flask<br><a href="https://github.com/Aaliyan-coder/CHAT-BOT-WITH-NEO4J" target="_blank">GitHub</a></li>
+        <li><strong>Data Analysis Toolkit</strong> – CLI tool for data wrangling<br><a href="https://github.com/aaliyanarif/data-analysis-toolkit" target="_blank">GitHub</a></li>
+        <li><strong>Bank System in C++</strong> – OOP-based account simulation<br><a href="https://github.com/aaliyanarif/bank-management-system" target="_blank">GitHub</a></li>
+        <li><strong>Family Tree Logic System</strong> – Prolog + Python logic<br><a href="https://github.com/aaliyanarif/family-tree-logic-system" target="_blank">GitHub</a></li>
       </ul>
+      <div class="projects">
+        <img src="projects-preview.jpg" alt="Project Preview" />
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      
-      <p>Email: <em>aaliyanrif@gmail.com</em><br>
-      GitHub: <a href="https://github.com/Aaliyan-coder" target="_blank">Github.com/AaliyanArif</a><br>
-      Linkedin <a href="https://www.linkedin.com/in/aaliyan-arif-b17172276/" target="_blank">Linkedin.com/AaliyanArif</p>
+      <p>
+        📧 Email: <a href="mailto:aaliyanrif@gmail.com">aaliyanrif@gmail.com</a><br>
+        💻 GitHub: <a href="https://github.com/Aaliyan-coder" target="_blank">github.com/aaliyanarif</a><br>
+        🔗 LinkedIn: <a href="https://www.linkedin.com/in/aaliyan-arif-b17172276/" target="_blank">linkedin.com/in/aaliyan-arif</a>
+      </p>
     </section>
-  </main>
+  </div>
 
   <script>
     function showSection(id) {
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
       });
+      document.querySelectorAll('.tabs button').forEach(btn => {
+        btn.classList.remove('active');
+      });
       document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
     }
+    function toggleMode() {
+  document.body.classList.toggle('light-mode');
+  const icon = document.getElementById('mode-icon');
+  icon.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const name = "Muhammad Aaliyan";
+  let i = 0;
+  const interval = setInterval(() => {
+    document.getElementById("typed-name").textContent = name.slice(0, i++);
+    if (i > name.length) clearInterval(interval);
+  }, 100);
+});
+
+
   </script>
 </body>
 </html>
