@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aaliyan Arif - Profile</title>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
   margin: 0;
@@ -158,6 +160,45 @@ a:hover {
   background-color: #1e293b;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #1c2331;
+  margin: 10px;
+  border-radius: 12px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: translateY(-5px);
+  background-color: #334155;
+}
+
+.skill-icon i {
+  font-size: 32px;
+  color: #60a5fa;
+}
+
+.skill-name {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+  text-align: center;
+}
+
 
 .projects img {
   
@@ -277,6 +318,8 @@ body.light-mode a:hover {
     <button id="mode-toggle" onclick="toggleMode()">
   <span id="mode-icon">🌙</span>
 </button>
+
+
     <div class="card">
 
       <div class="profile-pic">
@@ -302,54 +345,82 @@ body.light-mode a:hover {
       <button onclick="showSection('contact')">Contact</button>
     </div>
 
-    <section id="about" class="active">
-      <h2>👤 Personal Profile</h2>
-      <p>
-        Aaliyan Arif is a passionate and highly motivated AI and software enthusiast from Pakistan...
-      </p>
-      <h2>💡 Academic & Technical Strengths</h2>
-      <h3>🤖 Artificial Intelligence & Machine Learning</h3>
-      <ul>
-        <li><strong>AIML</strong>: For pattern-based chatbot responses.</li>
-        <li><strong>Prolog</strong> (via <code>pyswip</code> and <code>pytholog</code>)</li>
-        <li><strong>Neo4j</strong>: Contextual memory graph DB.</li>
-        <li><strong>Flask</strong>: Python web framework for deployment.</li>
-      </ul>
-      <p>Combines Prolog + AIML + Neo4j to build hybrid AI systems.</p>
-      <h3>📊 Data Science & Machine Learning</h3>
-      <ul>
-        <li>Supervised learning (KNN, regression, gradient descent)</li>
-        <li>Evaluation metrics: accuracy, F1-score, etc.</li>
-        <li>Data cleaning, similarity, Apriori, GINI Index</li>
-      </ul>
-      <h3>🧠 Neural Networks</h3>
-      <ul>
-        <li>Input/output layers, Softmax, ReLU, loss, backpropagation</li>
-      </ul>
-      <h3>💻 Web Development</h3>
-      <ul>
-        <li>Responsive design using HTML, CSS, JS</li>
-        <li>Interactive projects & portfolio sites</li>
-      </ul>
-    </section>
+  <section id="about" class="active">
+  <h2>👤 About Me</h2>
+  <p>
+    I’m <strong>Aaliyan Arif</strong>, an aspiring AI engineer and software developer based in Pakistan. I specialize in designing intelligent systems by integrating rule-based reasoning, machine learning, and graph-based memory. With a strong foundation in both theory and practical implementation, I enjoy building hybrid solutions that combine multiple technologies to solve real-world problems.
+  </p>
+
+  <h2>💼 Core Competencies</h2>
+
+  <h3>🤖 Artificial Intelligence & Machine Learning</h3>
+  <ul>
+    <li>Designed chatbot systems using <strong>AIML</strong> for pattern recognition.</li>
+    <li>Integrated <strong>Prolog</strong> (via <code>pyswip</code> / <code>pytholog</code>) for logical reasoning and family relationship queries.</li>
+    <li>Utilized <strong>Neo4j</strong> as a memory graph database to retain contextual knowledge.</li>
+    <li>Built and deployed AI applications using <strong>Flask</strong>.</li>
+    <li>Developed custom AI workflows combining rule-based logic and machine learning.</li>
+  </ul>
+
+  <h3>📊 Data Science & Predictive Modeling</h3>
+  <ul>
+    <li>Experience with supervised learning algorithms including <strong>KNN</strong>, <strong>linear regression</strong>, and <strong>gradient descent</strong>.</li>
+    <li>Skilled in data preprocessing, feature selection, and model evaluation (accuracy, F1-score, precision/recall).</li>
+    <li>Hands-on with techniques like similarity measures, <strong>GINI Index</strong>, and association rule mining (e.g., <strong>Apriori</strong>).</li>
+  </ul>
+
+  <h3>💻 Web Development</h3>
+  <ul>
+    <li>Responsive and accessible design using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</li>
+    <li>Created interactive web apps and professional portfolio sites optimized for both desktop and mobile platforms.</li>
+  </ul>
+</section>
 
     <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Languages: Python, C++, Prolog, SQL, AIML, HTML, CSS, JavaScript</li>
-        <li>Frameworks: Flask, Express.js</li>
-        <li>Concepts: OOP, DSA, Algorithm Design</li>
-        <li>AI & NLP: NLTK, Symbolic AI, Rule-Based Systems</li>
-        <li>Databases: Neo4j, SQLite, MySQL</li>
-        <li>Tools: Git, REST APIs, Linux</li>
-      </ul>
-    </section>
+  <h2>Skills</h2>
+  <ul>
+    <li>Languages: Python, C++, Prolog, SQL, AIML, HTML, CSS</li>
+    <li>Frameworks: Flask, Node.js</li>
+    <li>Concepts: OOP, DSA, Machine Learning, Analysis and Algorithm</li>
+    <li>AI & NLP: NLTK, Symbolic AI, Rule-Based Systems</li>
+    <li>Databases: Neo4j, MySQL</li>
+    <li>Tools: Linux</li>
+  </ul>
+
+  <!-- Icon-Based Visual Skill Tiles -->
+  <div class="skills-icons">
+    <div class="skill-icon">
+      <i class="fas fa-brain"></i>
+      <div class="skill-name">AI & ML</div>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-database"></i>
+      <div class="skill-name">Neo4j / MySQL</div>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-code"></i>
+      <div class="skill-name">Python / C++</div>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-robot"></i>
+      <div class="skill-name">AIML / Prolog</div>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-globe"></i>
+      <div class="skill-name">HTML / CSS / JS</div>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-terminal"></i>
+      <div class="skill-name">Linux / CLI</div>
+    </div>
+  </div>
+</section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>BS in Artificial Intelligence</strong> – UMT Lahore (2021–Present)</li>
-        <li><strong>ICS with Statistics</strong> – Pre-Engineering Stream</li>
+        <li><strong>BS in Artificial Intelligence</strong> – UMT Lahore (2022–Present)</li>
+        <li><strong>ICS with Statistics</strong> – Intermidiate</li>
       </ul>
     </section>
 
